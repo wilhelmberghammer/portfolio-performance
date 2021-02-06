@@ -7,6 +7,10 @@ import os
 def stock(request):
 	'''
 		Testing - that's why it looks so bad
+
+		todo:
+			* change in %
+			* current price
 	'''
 
 
