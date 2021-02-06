@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<canvas id="myChart"></canvas>
+
+<script>
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var chart = new Chart(ctx, {
+		// The type of chart we want to create
+		type: 'line',
+
+		// The data for our dataset
+		data: {
+			labels: {{ date_list|safe }},
+			datasets: [{
+				label: "\{{ symbol|safe }} on \{{ exchange|safe }} in \{{ currency|safe }}",
+				backgroundColor: 'rgb(255, 140, 0, 0.3)',
+				borderColor: 'rgb(255, 140, 0)',
+				data: {{ closing_list|safe }},
+			}]
+		},
+
+		// Configuration options go here
+		options: {
+
+		}
+	});
+</script>
+
+{% endblock content %}
