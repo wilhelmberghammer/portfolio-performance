@@ -18,16 +18,18 @@
 		</div>
 	  </div>
 
+	  {% for stock in stocks %}
 	  <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
 		<div class="p-2 sm:w-1/2 w-full">
 		  <div class="bg-gray-100 rounded flex p-4 h-full items-center">
 			<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-yellow-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
 				<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
 			</svg>
-			<span class="title-font font-medium">Stock 1</span>
+			<span class="title-font font-medium">{{ stock.symbol }}</span>
 		  </div>
 		</div>
 	  </div>
+	  {% endfor %}
 	</div>
   </section>
 

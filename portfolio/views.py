@@ -1,9 +1,25 @@
+'''
+TODO:
+	* portfolio_list
+		* calculate ytd performance and pass to frontend
+		* calculate overall performance and pass to frontend
+		* graph performance
+	* portfolio_detail
+		* calculate ytd performance
+		* calculate overall performance
+		* graph performance
+'''
+
+
 from django.shortcuts import render
 
+from .models import Stock
+
+
 def portfolio_list(request):
-	text = 'protfolio list'
+	stocks = Stock.objects.all()
 
 	context = {
-		'text': text,
+		"stocks": stocks
 	}
-	return render(request, 'portfolio/portfolio_list.html', context)
+	return render(request, "portfolio/portfolio_list.html", context)
