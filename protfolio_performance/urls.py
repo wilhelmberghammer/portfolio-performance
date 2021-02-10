@@ -6,6 +6,5 @@ from .views import LandingPageView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', LandingPageView.as_view(), name='landing-page'),
-    path('stocks/', include('stocks.urls', namespace='stocks')),
     path('portfolio/', include('portfolio.urls', namespace='portfolio')),
 ]
