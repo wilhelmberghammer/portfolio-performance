@@ -12,7 +12,7 @@ I want a crude overview of the perfromance of my/any portfolio (which has to be 
 * add/remove positions
 * auth
 
-*for now I'll just use the closing prices - no realtime*
+*for now I'll be using the closing prices for all the performance calculations - no realtimeperformance and no accurate opening price*
 
 <br>
 
