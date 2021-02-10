@@ -14,7 +14,6 @@ I want a crude overview of the perfromance of my/any portfolio (which has to be 
 
 *for now I'll be using the closing prices for all the performance calculations - no realtimeperformance and no accurate opening price*
 
-<br>
 
 ## **API**
 I am using the [twelvedata](https://twelvedata.com/) stock API (free tier).
