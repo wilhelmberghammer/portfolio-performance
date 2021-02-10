@@ -1,4 +1,5 @@
 # **Portfolio Performance**
+*WORK IN PROGRESS*
 Django project to track the performance of a stock portfolio - because my broker can't figure that out smh...
 
 
