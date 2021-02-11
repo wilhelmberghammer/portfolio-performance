@@ -13,11 +13,11 @@ TODO:
 
 import requests
 import os 
-from django.shortcuts import render
+from django.shortcuts import render, reverse, redirect
 from django.views import generic
 
 from .models import Stock
-
+from .forms import PositionForm, StockModelForm
 
 def get_data(symbol, interval, start_date):
 	'''
@@ -40,3 +40,11 @@ def portfolio_list(request):
 		"stocks": stocks
 	}
 	return render(request, "portfolio/portfolio_list.html", context)
+
+
+class PositionCreateView(generic.CreateView):
+	template_name = 'portfolio/new_position.html'
+	form_class = StockModelForm
+	
+	def get_success_url(self):
+		return reverse("portfolio:portfolio-list")
