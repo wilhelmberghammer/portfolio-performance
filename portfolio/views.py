@@ -1,16 +1,3 @@
-'''
-TODO:
-	* portfolio_list
-		* calculate ytd performance and pass to frontend
-		* calculate overall performance and pass to frontend
-		* graph performance
-	* portfolio_detail
-		* calculate ytd performance
-		* calculate overall performance
-		* graph performance
-	* add position
-'''
-
 import requests
 import os 
 from django.shortcuts import render, reverse, redirect
@@ -18,6 +5,8 @@ from django.views import generic
 
 from .models import Stock
 from .forms import PositionForm, StockModelForm
+
+
 
 def get_data(symbol, interval, start_date):
 	'''
@@ -48,3 +37,20 @@ class PositionCreateView(generic.CreateView):
 	
 	def get_success_url(self):
 		return reverse("portfolio:portfolio-list")
+
+
+class PositionEditView(generic.UpdateView):
+	template_name = 'portfolio/edit_position.html'
+	queryset = Stock.objects.all()
+	form_class = StockModelForm
+	
+	def get_success_url(self):
+		return reverse("portfolio:portfolio-list")
+
+
+class PositionDeleteView(generic.DeleteView):
+	template_name = 'portfolio/delete_position.html'
+	queryset = Stock.objects.all()
+	
+	def get_success_url(self):
+		return reverse("portfolio:portfolio-list")  
