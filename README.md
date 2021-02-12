@@ -22,3 +22,8 @@ I am using the [twelvedata](https://twelvedata.com/) stock API (free tier).
 
 ## **Graphing**
 I am using [chart.js](https://www.chartjs.org/) for the graphs.
+
+
+## TODO:
+* position details
+* performance calculation
