@@ -39,13 +39,16 @@ def PositionDetailView(request, pk):
 	position = Stock.objects.get(id=pk)
 
 
-	symbol=position.symbol
+	symbol = position.symbol
 	interval = "1day"
-	start_date = position.start_date 
+	start_date = position.start_date
+	amount = position.amount
 
-	response = requests.get(f"https://api.twelvedata.com/time_series?symbol={symbol}&interval={interval}&start_date={start_date}&apikey={api_key}")
+	# get data
+	response = requests.get(f"https://api.twelvedata.com/time_series?symbol={symbol}&interval={interval}&dp=2&start_date={start_date}&apikey={api_key}")
 	resp = response.json()
 	
+	# extract values into list
 	closing_list = []
 	date_list = []
 
@@ -56,19 +59,18 @@ def PositionDetailView(request, pk):
 	closing_list.reverse()
 	date_list.reverse()
 
-
-	symbol = resp['meta']['symbol']
+	# data that needs to be passed
 	currency = resp['meta']['currency']
 	exchange = resp['meta']['exchange']
+
 	last_closing_price = round(closing_list[-1], 2)
 	change_pct = round((closing_list[-1]/closing_list[0]-1)*100, 2)
+	current_position_value = last_closing_price*amount
 
 	
-	color = 'rgb(255, 140, 0)'
 	if change_pct < 0:
 		change_color = 'text-red-500' 
-
-	if change_pct > 0:
+	elif change_pct > 0:
 		change_color = 'text-green-600'
 	else:
 		change_color = 'text-gray-900'
@@ -82,6 +84,7 @@ def PositionDetailView(request, pk):
 		'exchange': exchange,
 		'change_pct': change_pct,
 		'last_closing_price': last_closing_price,
+		'current_position_value': current_position_value,
 		'change_color': change_color,
 	}	
 	return render(request, "portfolio/detail_position.html", context)
