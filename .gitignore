@@ -131,3 +131,8 @@ dmypy.json
 
 # Secret stuff
 secrets.json
+
+# asset list (for now ignored)
+stocks.json
+etfs.json
+indices.json
