@@ -22,6 +22,6 @@ I am using [chart.js](https://www.chartjs.org/) for the graphs.
 * position details
 	* chart asset/position  ☑️	
 	* performacne of asset/position	 ☑️
-	* weigted absolut performance (in fiat currancy)
+	* weighted absolut performance (in fiat currancy)
 * performance calculation
 * auth
