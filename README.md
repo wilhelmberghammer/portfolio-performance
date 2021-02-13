@@ -16,7 +16,7 @@ I am using the [twelvedata](https://twelvedata.com/) stock API (free tier).
 ## **Graphing**
 I am using [chart.js](https://www.chartjs.org/) for the graphs.
 
-![position detail graphing](https://github.com/wilhelmberghammer/portfolio-performance/blob/main/readme_recourses/position_detail.png)
+![position detail graphing](https://github.com/wilhelmberghammer/portfolio-performance/blob/main/readme_resources/position_detail.png)
 
 ## TODO:
 * position details
