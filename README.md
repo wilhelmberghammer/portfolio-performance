@@ -25,8 +25,8 @@ I am using [chart.js](https://www.chartjs.org/) for the graphs.
 
 
 ## TODO:
-⬜️ position details
-	✔️ chart asset/position
-	✔️ performacne of asset/position
-	⬜️  weigted absolut performance (in fiat currancy)
-⬜️ performance calculation
+* position details
+	* chart asset/position	✔️
+	* performacne of asset/position	 ✔️
+	* weigted absolut performance (in fiat currancy)
+* performance calculation
