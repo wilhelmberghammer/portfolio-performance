@@ -41,7 +41,7 @@
 					<div class="flex-grow">
 						<a href="{% url 'portfolio:position-edit' stock.pk %}" class="cursor-pointer tracking-widest text-xs title-font font-medium text-yellow-500 mb-1">EDIT</a>
 						<h2 class="text-gray-900 text-lg title-font font-medium mt-1 mb-1">{{ stock.amount }} shares of {{stock.symbol }}</h2>
-						<a href="#" class="cursor-pointer mt-3 text-yellow-500 inline-flex items-center">
+						<a href="{% url 'portfolio:position-detail' stock.pk %}" class="cursor-pointer mt-3 text-yellow-500 inline-flex items-center">
 							Details	
 							<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
 								stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
