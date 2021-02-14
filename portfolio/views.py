@@ -78,6 +78,10 @@ def PositionDetailView(request, pk):
 
 
 class PositionCreateView(generic.CreateView):
+	'''
+	TODO:
+		* after positions has be created -> Review Position -> call API (display info) -> confirm/delete
+	'''
 	template_name = 'portfolio/new_position.html'
 	form_class = StockModelForm
 	
